@@ -9,7 +9,7 @@ def main():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
 	if request.method == 'POST':
-		return redirect("result.html")
+		return redirect("/result")
  	return render_template('index.html')
 
 @app.route('/result', methods=['GET', 'POST'])
