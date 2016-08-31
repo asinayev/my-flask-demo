@@ -10,13 +10,8 @@ def main():
 def index():
 	if request.method == 'POST':
 		tickerdict = request.form
-		return redirect(url_for("result"), name = tickerdict['ticker'])
+		return render_template("result.html", ticker = tickerdict['ticker'])
  	return render_template('index.html')
-
-@app.route('/result')
-def result(name):
-	return 'Hello %s!' % name
-	#return render_template("result.html", ticker = name)
 
 
 if __name__ == '__main__':
