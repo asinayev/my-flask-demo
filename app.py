@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 import pandas as pd
 import numpy as np
-from bokeh.plotting import figure, output_file, show
+#from bokeh.plotting import figure, output_file, show
 
 def makeplot(ticker):
 	stockdat = pd.read_csv("https://www.quandl.com/api/v3/datasets/WIKI/%s.csv?start_date=2016-07-01&end_date=2016-08-01" % ticker)
