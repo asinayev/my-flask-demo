@@ -9,14 +9,13 @@ def main():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
 	if request.method == 'POST':
-		return redirect("/result")
+		ticker = request.form
+		return redirect("/result", name = ticker)
  	return render_template('index.html')
 
-@app.route('/result', methods=['GET', 'POST'])
-def result():
-	if request.method == 'POST':
-		ticker = request.form
-		return render_template("result.html", result = ticker)
+@app.route('/result')
+def result(name):
+	return render_template("result.html", ticker = name)
 
 
 if __name__ == '__main__':
