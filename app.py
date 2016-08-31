@@ -9,9 +9,8 @@ def main():
 @app.route('/index', methods=['GET', 'POST'])
 def index():
 	if request.method == 'POST':
-		ticker = request.form
-		return 'Hello %s!' % ticker
-		#return redirect("/result", name = ticker)
+		tickerdict = request.form
+		return redirect("/result", name = tickerdict['ticker'])
  	return render_template('index.html')
 
 @app.route('/result')
@@ -20,4 +19,4 @@ def result(name):
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
