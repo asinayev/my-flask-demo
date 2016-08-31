@@ -15,7 +15,8 @@ def index():
 
 @app.route('/result')
 def result(name):
-	return render_template("result.html", ticker = name)
+	return 'Hello %s!' % name
+	#return render_template("result.html", ticker = name)
 
 
 if __name__ == '__main__':
