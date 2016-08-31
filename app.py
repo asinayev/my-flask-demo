@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for	
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ def main():
 def index():
 	if request.method == 'POST':
 		tickerdict = request.form
-		return redirect("/result", name = tickerdict['ticker'])
+		return redirect(url_for("result"), name = tickerdict['ticker'])
  	return render_template('index.html')
 
 @app.route('/result')
