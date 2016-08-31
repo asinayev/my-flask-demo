@@ -12,7 +12,7 @@ def index():
 		return redirect("result.html")
  	return render_template('index.html')
 
- @app.route('/result', methods=['GET', 'POST'])
+@app.route('/result', methods=['GET', 'POST'])
 def result():
 	if request.method == 'POST':
 		ticker = request.form
