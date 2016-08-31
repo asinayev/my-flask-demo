@@ -10,7 +10,8 @@ def main():
 def index():
 	if request.method == 'POST':
 		ticker = request.form
-		return redirect("/result", name = ticker)
+		return 'Hello %s!' % ticker
+		#return redirect("/result", name = ticker)
  	return render_template('index.html')
 
 @app.route('/result')
